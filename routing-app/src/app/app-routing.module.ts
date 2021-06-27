@@ -10,7 +10,9 @@ const routes: Routes = [
   {path:'first-component', component: FirstComponent},
   {path:'second-component', component: SecondComponent},
   // EXEMPLO DE UMA ROTA WILDCARD QUE RENDERIZA UM COMPONENT
-  // QUANDO UMA ROTA INEXISTENTE É USADA
+  // QUANDO UMA ROTA INEXISTENTE É USADA.
+  // UMA ROTA WILDCARD SEMPRE PRECISA SER DECLARADA PRO ULTIMO,
+  // POIS A PRINCIPIO ELA SERÁ UM MATCH PARA QUALQUER ROTA USADA
   {path: '**', component: PageNotFoundComponent }
 ];
 
