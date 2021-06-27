@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';//CLI IMPORTA AUTOMATICAM
 
 import { FirstComponent } from "./first/first.component";
 import { SecondComponent } from "./second/second.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 // SINTAXE BASICA DE OBJETO EM ITEM DA LISTA DE ROTAS
 const routes: Routes = [
   {path:'first-component', component: FirstComponent},
-  {path:'second-component', component: SecondComponent}
+  {path:'second-component', component: SecondComponent},
+  // EXEMPLO DE UMA ROTA WILDCARD QUE RENDERIZA UM COMPONENT
+  // QUANDO UMA ROTA INEXISTENTE É USADA
+  {path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
