@@ -3,7 +3,10 @@
 <nav>
   <ul>
     <!-- LINKS UTILIZANDO DIRETIVA ROUTERLINK CONTENDO ROTA DEFINIDA NO ROUTING MODULE PARA CADA COMPONENT -->
-    <li><a routerLink="/first-component" routerLinkActive="active">First Component</a></li>
+
+    <!-- A DIRETIVA QUERYPARAMS RECEBE OS DADOS QUE SERÃO ENVIADOS PARA A URL
+    EX: http://localhost:4200/first-component?name=Pier -->
+    <li><a routerLink="/first-component"  [queryParams]="{name:'Pier'}" routerLinkActive="active">First Component</a></li>
     <li><a routerLink="/second-component" routerLinkActive="active">Second Component</a></li>
   </ul>
 </nav>
