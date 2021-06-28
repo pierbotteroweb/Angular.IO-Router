@@ -4,11 +4,27 @@ import { RouterModule, Routes } from '@angular/router';//CLI IMPORTA AUTOMATICAM
 import { FirstComponent } from "./first/first.component";
 import { SecondComponent } from "./second/second.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { ChildAComponent } from './child-a/child-a.component';
+import { ChildBComponent } from './child-b/child-b.component';
 
 // SINTAXE BASICA DE OBJETO EM ITEM DA LISTA DE ROTAS
 const routes: Routes = [
   {path:'first-component', component: FirstComponent},
-  {path:'second-component', component: SecondComponent},
+  {path:'second-component', 
+  component: SecondComponent,
+  // Para definição de components com rotas relativas a outros components, 
+  // podemos utilizar rotas filhas, adicionando o array children ao escopo de uma rota pai
+  children:[
+    {
+      path: 'child-a', //path da rota filha
+      component: ChildAComponent // Component que vai ser renderizado pela rota filha
+    },
+    {
+      path: 'child-b', //path da segunda rota filha
+      component: ChildBComponent // Outro Component que vai ser renderizado pela rota filha
+    }
+  ]
+  },
   // PODEMOS REDIRECIONAR A RENDERIZAÇÃO DO NOSSO COMPONENT
   // DE UMA ROTA UTILIZADA, PARA UMA ROTA EXISTENTE.
   // E USAMOS O patchMatch PARA DEFINIR A PARTE A ROTA UTILIZADA
