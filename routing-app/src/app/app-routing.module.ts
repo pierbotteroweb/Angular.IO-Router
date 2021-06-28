@@ -9,6 +9,12 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 const routes: Routes = [
   {path:'first-component', component: FirstComponent},
   {path:'second-component', component: SecondComponent},
+  // PODEMOS REDIRECIONAR A RENDERIZAÇÃO DO NOSSO COMPONENT
+  // DE UMA ROTA UTILIZADA, PARA UMA ROTA EXISTENTE.
+  // E USAMOS O patchMatch PARA DEFINIR A PARTE A ROTA UTILIZADA
+  // QUE DEVE SER CONSIDERADA PARA O REDIRECIONAMENTO. 
+  // full ou prefix (full para a rota completa e prefix para uma parte da rota)
+  {path:'', redirectTo:'/first-component', pathMatch: 'full'},
   // EXEMPLO DE UMA ROTA WILDCARD QUE RENDERIZA UM COMPONENT
   // QUANDO UMA ROTA INEXISTENTE É USADA.
   // UMA ROTA WILDCARD SEMPRE PRECISA SER DECLARADA PRO ULTIMO,
