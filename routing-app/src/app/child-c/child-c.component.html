@@ -1,0 +1,15 @@
+<h2>Component Child C (sibling) de Child D</h2>
+<nav>
+    <!-- PARA ACESSAR UM COMPONENT SIBLING EM UM COMPONENT, PODEMOS USAR: -->
+    <ul>
+       <!-- A ROTA COMPLETA, COMO NO EXEMPLO ABAIXO -->
+       <li><a routerLink="/second-component/child-d">Full Route to ChildDComponent '/second-component/child-d'</a></li>
+       <!-- OU UM RELATIVE PATH USANDO ../ CMO NO EXEMPLO ABAIXO -->
+       <li><a routerLink="../child-d">Relative Route to Child DComponent '../child-d'</a></li>
+       <!-- USAR APENAS A ROTA FILHA NOS LEVARÁ A UM PAGE NOT FOUND -->
+       <li><a routerLink="child-d">Child Route to ChildDComponent 'child-d'</a></li>
+       <!-- USANDO ROUTE NAVIGATE VIA METODO NA LOGICA DO COMPONENT -->
+       <li><button (click)="goToItem('../child-d')">Via Metodo</button></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>

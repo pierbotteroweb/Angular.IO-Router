@@ -6,6 +6,8 @@ import { SecondComponent } from "./second/second.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { ChildAComponent } from './child-a/child-a.component';
 import { ChildBComponent } from './child-b/child-b.component';
+import { ChildCComponent } from './child-c/child-c.component';
+import { ChildDComponent } from './child-d/child-d.component';
 
 // SINTAXE BASICA DE OBJETO EM ITEM DA LISTA DE ROTAS
 const routes: Routes = [
@@ -22,6 +24,14 @@ const routes: Routes = [
     {
       path: 'child-b', //path da segunda rota filha
       component: ChildBComponent // Outro Component que vai ser renderizado pela rota filha
+    },
+    {
+      path: 'child-c', //path de rota para childC, no mesmo nivel (sibling) de childD
+      component: ChildCComponent // ComponentC contem link com relative path para ChildD
+    },
+    {
+      path: 'child-d', //path de rota para childD, no mesmo nivel (sibling) de childC
+      component: ChildDComponent 
     }
   ]
   },
